@@ -19,6 +19,9 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+app.use("/api/whoami", (req,res)=>{
+  res.json({ "ipaddress": req.ip, "language": "en-US,en;q=0.9", "software": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.20 Safari/537.36 Edg/97.0.1072.13"})
+});
 
 // your first API endpoint... 
 app.get("/api/hello", function (req, res) {
